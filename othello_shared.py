@@ -72,13 +72,15 @@ def get_score(board):
     p2_count = 0
     for i in range(len(board)):
         for j in range(len(board)):
-            if 1 == board[0][0] or 1 == [len(board)-1][0] or 1 == [len(board)-1][len(board)-1] or 1 == [0][len(board)-1]:
-              p1_count += 2
-            elif 2 == board[0][0] or 2 == [len(board)-1][0] or 2 == [len(board)-1][len(board)-1] or 2 == [0][len(board)-1]:
-              p2_count += 2
-            elif board[i][j] == 1: 
+            if board[i][j] == 1: 
+              if (i == 0 and j == 0) or (i == len(board)-1 and j == 0) or (i == len(board)-1 and j == len(board)-1) or (i == 0 and j == len(board)-1):
+                p1_count += 2
+              else:  
                 p1_count += 1
             elif board[i][j] == 2:
+              if (i == 0 and j == 0) or (i == len(board)-1 and j == 0) or (i == len(board)-1 and j == len(board)-1) or (i == 0 and j == len(board)-1):
+                p2_count += 2
+              else:
                 p2_count += 1
     return p1_count, p2_count
 

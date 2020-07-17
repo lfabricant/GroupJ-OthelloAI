@@ -15,7 +15,7 @@ import sys
 import time
 import math
 count = 0
-sys.setrecursionlimit(15)
+#sys.setrecursionlimit(15)
 #limit = sys.getrecursionlimit()
 
 # You can use the functions in othello_shared to write your AI 
@@ -83,7 +83,7 @@ def select_move_minimax(board, color):
     i is the column and j is the row on the board.  
     """
     count_depth = 15
-    start = 
+    #start = 
     li = get_possible_moves(board, color)
     best_move = None
     highest_score = -math.inf
@@ -96,8 +96,8 @@ def select_move_minimax(board, color):
         highest_score = score
         best_move = i
        # count+=1
-      if sys.getrecursionlimit() or :
-        return best_move
+     # if sys.getrecursionlimit():
+       # return best_move
     return best_move
 
 #def depth_limit()
@@ -184,10 +184,9 @@ def run_ai():
                                   # 1 : dark disk (player 1)
                                   # 2 : light disk (player 2)              
             # Select the move and send it to the manager 
-            #movei, movej = select_move_minimax(board, color)
-            movei, movej = select_move_alphabeta(board, color)
+            movei, movej = select_move_minimax(board, color)
+            #movei, movej = select_move_alphabeta(board, color)
             print("{} {}".format(movei, movej)) 
-
 
 if __name__ == "__main__":
   run_ai()
